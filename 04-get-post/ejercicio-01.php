@@ -19,7 +19,7 @@ if($Edad <= 17) {
 </head>
 <body>
     
-    <form action="ejercicio-01.php" method="$_GET">
+    <form action="ejercicio-01.php" method="GET">
         <br>
         <label for="Edad"></label>
         <input id="Edad" type="text" placeholder="Edad del usuario..." name="Edad">
