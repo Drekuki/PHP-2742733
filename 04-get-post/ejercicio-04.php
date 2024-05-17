@@ -25,7 +25,7 @@ if ($Metros == 'lisa') {
     <form action="ejercicio-04.php" method="POST">
         <br>
         <label for="Metros"></label>
-        <input id="Metros" type="text" placeholder="Ingrese los metros cuadrados..." name="Metros">
+        <input id="Metros" type="text" placeholder="Ingrese los m²..." name="Metros">
         <br> <br>
         <label for="Pared"></label>
         <input id="Pared" type="text" placeholder="Lisa/No lisa..." name="Pared">
