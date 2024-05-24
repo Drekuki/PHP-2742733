@@ -65,6 +65,8 @@ if ($velocidad >27 && $edad > 18 && $estatura >170){
 
 echo "<br>";
 
+//ejercicio 4
+
 $aire= "amarillo";
 
 
