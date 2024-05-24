@@ -63,4 +63,33 @@ if ($velocidad >27 && $edad > 18 && $estatura >170){
     echo "Vas a ligas menores";
 }
 
+echo "<br>";
+
+$aire= "amarillo";
+
+
+switch($aire){
+    case "verde":
+        echo "calidad del aire es buena";
+        break;
+    case "amarillo":
+        echo "calidad del aire es moderada";
+        break;
+    case "naranja":
+        echo "calidad del aire no es saludable para grupos sensibles";
+    break;
+    case "rojo":
+        echo "calidad del aire no es saludable";
+        break;
+    case "púrpura":
+        echo "calidad del aire es muy poco saludable";
+        break;
+    case "marrón":
+        echo "calidad del aire es peligrosa";
+        break;
+    default:
+        echo "el color no es válido";
+    break;
+}
+
 ?>
