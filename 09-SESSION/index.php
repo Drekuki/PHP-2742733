@@ -5,20 +5,40 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $usuario = $_POST['user'];
     $password = $_POST['password'];
 
-    $user_register = isset($_SESSION ['userRegister']) ? $_SESSION ['userRegister'] : null;
-    $pass_register = isset($_SESSION ['passRegister']) ? $_SESSION ['passRegister'] : null;
+    $user_register = isset($_SESSION['userRegister']) ? $_SESSION['userRegister'] : null;
+    $pass_register = isset($_SESSION['passRegister']) ? $_SESSION['passRegister'] : null;
 
     //verificacion de los datos vacion / llenos
     if (empty($usuario) or empty($password)) {
         echo 'Rellene completo el formulario';
     } else {
-        echo $usuario . ' - ' . $password;
-        if ($usuario == $user_register['userRegister'] && $password == $pass_register['passRegister']) {
-            echo ' - Listo, sesion iniciada 😜';
-            header ('location: user.php');
+
+        try {
+
+            $conexion = new PDO("mysql: host=localhost; dbname=focaapp", 'root', '');
+            echo "Conexion OK" . "<br>";
+        } catch (PDOException $e) {
+            echo "Error:" . $e->getMessage() . "<br>";
+        }
+
+        $statement = $conexion->prepare("SELECT * FROM `usersapp` WHERE username = :user AND password = :pass");
+
+        $statement-> execute(array( ':user' => $usuario, ':pass' => $password));
+
+        $result = $statement->fetch();
+
+        if ($result) {
+            echo 'true';
+            $_SESSION['userRegister'] = $usuario;
+            $_SESSION['passRegister'] = $password;
+            $_SESSION['correoRegister'] = $correo;
+            header('Location: user.php');
+        } else {
+            echo 'false';
         }
     }
 }
+
 
 ?>
 

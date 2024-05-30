@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $_SESSION['userRegister'] = $usuario;
         $_SESSION['passRegister'] = $password;
         $_SESSION['correoRegister'] = $correo;
-        echo ' - variables de sesion guardadas 🤣💋';
+        echo 'variables de sesion guardadas 🤣💋';
         //header('location: index.php');
 
         try {
@@ -29,6 +29,16 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         
     
         $statement->execute(Array(":usuario"=> $usuario, ":correo" => $correo, ":pass" => $password));
+
+        $result = $statement -> fetch();
+
+        if ($result) {
+            echo 'true';
+            $_SESSION['userRegister'] = $usuario;
+            $_SESSION['passRegister'] = $password;
+            $_SESSION['correoRegister'] = $correo;
+            header ('Location: user.php');
+        } else {echo 'false';}
         
     }
 }
