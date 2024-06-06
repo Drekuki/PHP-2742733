@@ -49,29 +49,29 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./CSS/index.css">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <h1>Pagina de inicio</h1>
+    <div class="todo">
+        <div class="contenedor">
+            <h1>Pagina de inicio</h1>
+            <form action="index.php" method="post">
+                <label for="user"></label>
+                <input class="barra" id="user" type="text" placeholder="Nombre de usuario..." name="user">
+                <br>
+                <label for="password"></label>
+                <input class="barra" id="password" type="password" placeholder="Contraseña de usuario..." name="password">
+                <br> <br>
+                <button class="boton" type="submit" class="BI">Iniciar sesion</button>
+            </form>
+            <br>
+            <a class="boton1" href="./registro.php">Registrate</a>
+        </div>
+    </div>
 
-
-    <form action="index.php" method="post">
-        <label for="user"></label>
-        <input id="user" type="text" placeholder="Nombre de usuario..." name="user">
-        <br> <br>
-        <label for="password"></label>
-        <input id="password" type="password" placeholder="Contraseña de usuario..." name="password">
-        <br> <br>
-        <button type="submit" class="BI">Iniciar sesion</button>
-    </form>
-    <br>
-
-    <a href="./registro.php">Registrate</a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
